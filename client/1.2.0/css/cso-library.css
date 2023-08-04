@@ -1,0 +1,1013 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+/* Table of Contents 
+
+	1. Global 
+	2. Colour
+	3. Containers
+	4. Styles
+		4.1 Header
+		4.2 Navigation
+		4.3 Form Elements
+		4.4 Modules:
+		4.5 Buttons
+		4.6 Footer 
+	5. Tables
+	6. Media Queries
+
+*/
+
+/*******************************************************************************
+Global
+*******************************************************************************/
+
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Keeping footer at the bottom of page when building a new one */
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Roboto Sans', sans-serif;
+    /*margin: 0 0 240px;*/
+   
+ display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Roboto Slab', sans-serif
+}
+
+h4 {
+	padding: 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+ol { 
+	display: flex;
+    flex-direction: column;
+	align-items: stretch;
+	padding: 25px;
+}
+
+
+/*******************************************************************************
+Colour
+*******************************************************************************/
+
+/* Font Awesome Icons */
+
+i {
+    color: #ffffff;
+}
+
+
+/* Link Styles */
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/*******************************************************************************
+Colour - Default - Green
+*******************************************************************************/
+
+.modular-body {
+    background-color: #006f74;
+    color: #ffffff;
+}
+
+form,
+.tool-bar .icon1,
+.tool-bar .icon2,
+.tool-bar .icon3,
+.tool-bar .icon4,
+.site-navigation,
+.dropdown-content,
+.modular-header,
+.modular-footer,
+.modular-body-small,
+.modular-footer-small {
+    background-color: #006f74;
+    color: #FFFFFF;
+}
+
+.modular-body li a::before,
+.accordion::before {
+    color: #004F50;
+}
+
+.site-navigation a:hover {
+    background-color: #00ada8;
+    color: #ffffff;
+}
+
+
+/* Button Default */
+
+.button,
+.button-rounded {
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+/*******************************************************************************
+Colour - Light Green
+*******************************************************************************/
+
+
+form.lightgreen,
+.tool-bar .icon1.lightgreen,
+.tool-bar .icon2.lightgreen,
+.tool-bar .icon3.lightgreen,
+.tool-bar .icon4.lightgreen,
+.lightgreen.site-navigation,
+.lightgreen .dropdown-content,
+.lightgreen .modular-header,
+.lightgreen .modular-footer,
+.lightgreen.modular-footer,
+.lightgreen .modular-body-small,
+.lightgreen .modular-footer-small,
+.button.lightgreen,
+.button-rounded.lightgreen {
+    background-color: #579599;
+}
+
+.lightgreen .modular-body li a::before,
+.lightgreen .accordion::before {
+    color: #45C1C0;
+}
+
+.lightgreen.site-navigation a:hover {
+    background-color: #6ce8e7;
+    color: #ffffff;
+}
+
+
+/*******************************************************************************
+Mint
+*******************************************************************************/
+
+form.blue,
+.tool-bar .icon1.blue,
+.tool-bar .icon2.blue,
+.tool-bar .icon3.blue,
+.tool-bar .icon4.blue,
+.blue.site-navigation,
+.blue .dropdown-content,
+.blue .modular-header,
+.blue .modular-footer,
+.blue.modular-footer,
+.blue .modular-body-small,
+.blue .modular-footer-small,
+.button.blue,
+.button-rounded.blue {
+    background-color: #45C1C0;
+}
+
+.blue .modular-body li a::before,
+.blue .accordion::before {
+    color: #45C1C0;
+}
+
+.blue.site-navigation a:hover {
+    background-color: #6ce8e7;
+    color: #ffffff;
+}
+
+/*******************************************************************************
+ Dark Blue
+*******************************************************************************/
+
+form.darkblue,
+.tool-bar .icon1.darkblue,
+.tool-bar .icon2.darkblue,
+.tool-bar .icon3.darkblue,
+.tool-bar .icon4.darkblue,
+.darkblue.site-navigation,
+.darkblue .dropdown-content,
+.darkblue .modular-header,
+.darkblue .modular-footer,
+.darkblue.modular-footer,
+.darkblue .modular-body-small,
+.darkblue .modular-footer-small,
+.button.darkblue,
+.button-rounded.darkblue {
+    background-color: #35456b;
+}
+
+.darkblue .modular-body li a::before,
+.darkblue .accordion::before {
+    color: #35456b;
+}
+
+.darkblue.site-navigation a:hover {
+    background-color: #586a95;
+    color: #ffffff;
+}
+
+
+/*******************************************************************************
+Pink
+*******************************************************************************/
+
+form.pink,
+.tool-bar .icon1.pink,
+.tool-bar .icon2.pink,
+.tool-bar .icon3.pink,
+.tool-bar .icon4.pink,
+.pink.site-navigation,
+.pink .dropdown-content,
+.pink .modular-header,
+.pink .modular-footer,
+.pink.modular-footer,
+.pink .modular-body-small,
+.pink .modular-footer-small,
+.button.pink,
+.button-rounded.pink {
+    background-color: #1D345C;
+}
+
+.pink .modular-body li a::before,
+.pink .accordion::before {
+    color: #1D345C;
+}
+
+.pink.site-navigation a:hover {
+    background-color: #FFB6C9;
+    color: #ffffff;
+}
+
+/*******************************************************************************
+Orange
+*******************************************************************************/
+
+form.orange,
+.tool-bar .icon1.orange,
+.tool-bar .icon2.orange,
+.tool-bar .icon3.orange,
+.tool-bar .icon4.orange,
+.orange.site-navigation,
+.orange .dropdown-content,
+.orange .modular-header,
+.orange .modular-footer,
+.orange.modular-footer,
+.orange .modular-body-small,
+.orange .modular-footer-small,
+.button.orange,
+.button-rounded.orange {
+    background-color: #fbaa34;
+}
+
+.orange .modular-body li a::before,
+.orange .accordion::before {
+    color: #FAA21B;
+}
+
+.orange.site-navigation a:hover {
+    background-color: #FFC8B6;
+    color: #ffffff;
+}
+
+/*******************************************************************************
+Red
+*******************************************************************************/
+
+form.red,
+.tool-bar .icon1.red,
+.tool-bar .icon2.red,
+.tool-bar .icon3.red,
+.tool-bar .icon4.red,
+.red.site-navigation,
+.red .dropdown-content,
+.red .modular-header,
+.red .modular-footer,
+.red.modular-footer,
+.red .modular-body-small,
+.red .modular-footer-small,
+.button.red,
+.button-rounded.red {
+    background-color: #45C1C0;
+}
+
+.red .modular-body li a::before,
+.red .accordion::before {
+    color: #45C1C0;
+}
+
+.red.site-navigation a:hover {
+    background-color: #fd1c3e;
+    color: #000000;
+}
+
+/*******************************************************************************
+Purple
+*******************************************************************************/
+
+form.purple,
+.tool-bar .icon1.purple,
+.tool-bar .icon2.purple,
+.tool-bar .icon3.purple,
+.tool-bar .icon4.purple,
+.purple.site-navigation,
+.purple .dropdown-content,
+.purple .modular-header,
+.purple .modular-footer,
+.purple.modular-footer,
+.purple .modular-body-small,
+.purple .modular-footer-small,
+.button.purple,
+.button-rounded.purple {
+    background-color: #006168;
+}
+
+.purple .modular-body li a::before,
+.purple .accordion::before {
+    color: #006168;
+}
+
+.purple.site-navigation a:hover {
+    background-color: #CF19C9;
+    color: #FFFFFF;
+}
+
+/*******************************************************************************
+White
+*******************************************************************************/
+
+.modular-footer.white,
+.modular-footer.white i {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+
+/* Off White for inset text */
+
+.inset .modular-footer,
+.inset .modular-footer i {
+    background-color: #f2f2f2;
+    color: #000000;
+}
+
+.button.white,
+.button-rounded.white {
+    color: #000000;
+    border: 2px solid #000000
+}
+
+
+/* Utilities / Actions (Hovers etc) */
+
+.modular-body li a:hover,
+.accordion:hover,
+.modular-body h3:hover {
+    background-color: #d9d9d9;
+    background-color: rgba(191, 191, 191, .8);
+}
+
+.button:hover,
+.button-rounded:hover {
+    text-decoration: underline;
+}
+
+/*******************************************************************************
+Containers
+*******************************************************************************/
+
+.body-container
+ {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Max Widths */
+
+.site {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.site.width-l {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.site.width-xl {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+
+/* Content Containers */
+
+.body-container {
+	flex: 1;
+}
+
+.container-default {
+    width: 33.3333%;
+    margin: 0 auto;
+    padding: 5px;
+
+}
+
+.container-half {
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px;
+
+}
+
+.container-full {
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+
+}
+
+/*******************************************************************************
+Header
+*******************************************************************************/
+
+.header-container {
+	display: flex;
+justify-content: space-between;
+}
+
+.header-container h1 {
+    align-self: flex-end;
+    color: #418288;
+    margin: 0 25px;
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+.logo {
+    margin: 0 50px;
+    /*width: 25%; */
+	cursor: pointer;
+}
+
+.logo > img {
+	max-height: 130px;
+	padding: 0 1%;
+}
+
+/*******************************************************************************
+Navigation
+*******************************************************************************/
+
+.site-navigation {
+    width: 100%;
+    margin: 0 0 30px;
+}
+
+.site-navigation ul {
+    padding: 0 0 0 25px;
+}
+
+.site-navigation ul li {
+    display: inline-block;
+    line-height: 1.375em;
+    letter-spacing: .01em;
+    width: 190px;
+}
+
+.site-navigation a {
+    display: block;
+    padding: 15px 10px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.main-nav > li {
+    border-bottom: 5px solid transparent;
+	text-align: center;
+}
+.main-nav > .active {
+    border-bottom: 5px solid #45c1c0;
+}
+
+.dropdown-content > .content {
+	text-align: left;
+}
+
+.dropdown-content > .content > .active {
+    border-left: 5px solid #45c1c0;
+}
+
+.burger-nav {
+    /* display none - large screens */
+    display: none;
+}
+
+
+/* Dropdown Start */
+
+.main-nav {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    transition: all .5s;
+}
+
+.dropdown .dropdown-content {
+    padding: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: visibility .3s, opacity .3s ease-in-out;
+    z-index: 999;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.content {
+    width: 100%;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.content a {
+    display: block;
+}
+
+.content a:first-child {
+    border-top: 1px solid #FFFFFF;
+}
+
+/*******************************************************************************
+Forms
+*******************************************************************************/
+
+.form {
+    padding: 20px;
+    margin: 15px;
+    /* Causing Spacing Issues */
+}
+
+.form .field-group {
+    display: flex;
+    margin: 0 0 15px;
+}
+
+.form .field-group .label {
+    width: 20%;
+    text-align: right;
+    align-self: center;
+    margin: 0 8px 0 0;
+    padding: 2px 0;
+}
+
+.form .field-group .field {
+    width: 80%;
+}
+
+.form .field-group:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form input,
+.form select,
+.form textarea {
+    padding: 8px;
+    font-size: 1.2em;
+    border: solid 1px #aaaaaa;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+}
+
+.form input,
+.form select {
+    width: 100%;
+}
+
+.form input:not([type=submit]),
+.form textarea,
+.inset {
+    /* inset below */
+    box-shadow: 0 1px 4px #000000 inset, 0 1px #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3) inset, 0 1px rgba(255, 255, 255, .06);
+}
+
+.form label {
+    font-size: 1.1em;
+}
+
+.form textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.form input[type=radio],
+.form input[type=checkbox],
+.form input[type=submit] {
+    width: auto;
+}
+
+.form input[type=submit] {
+    float: right;
+    margin: 10px 15px 0 0;
+}
+
+/*******************************************************************************
+Modules
+*******************************************************************************/
+
+/* small screen - plus icon on simple list w/dropdowns   */
+
+.modular-body,
+.modular-footer,
+.modular-footer-small {
+    display: block;
+    position: relative;
+}
+
+.modular-box {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+
+/* Small - Simple */
+
+.modular-box-small {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modular-body-small h3 {
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 15px 20px;
+}
+
+.modular-body-small p {
+    padding: 15px;
+    line-height: 1.375em;
+    letter-spacing: .01em;
+}
+
+.modular-body-small i {
+    display: block;
+    padding: 5px;
+}
+
+
+/* Module Header */
+
+.modular-header {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    font-size: 1.4em;
+}
+
+.modular-header h3 {
+    flex-grow: 1;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 400;
+    cursor: default;
+}
+
+.modular-header ul {
+    display: flex;
+    align-items: stretch;
+    text-align: right;
+}
+
+.modular-header li {
+    display: block;
+    list-style: none;
+    padding: 2px;
+}
+
+.modular-body li {
+    border-top: 1px solid #ffffff;
+    list-style: none;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.modular-body h3 {
+    padding: 15px 20px;
+}
+
+.modular-body li a {
+    display: block;
+    padding: 13px 20px;
+}
+
+.panel a::before,
+
+/* Panel Starts below */
+
+.modular-body li a::before {
+    content: "\f105     ";
+    font-family: FontAwesome;
+}
+
+.modular-body img {
+    max-width: 100%;
+    display: block;
+}
+
+.modular-body p {
+    text-align: left;
+    padding: 15px;
+}
+
+
+/* Detailed List */
+
+.detailed-list {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+
+.detailed-list h3,
+.sticky li {
+    /* Sticky at bottom */
+    padding: 1px;
+}
+
+.detailed-list+p {
+    padding: 5px 0 5px 25px;
+    font-size: .8em;
+}
+
+
+/* Modular Box W/Dropdowns */
+
+.accordion,
+.accordion:focus {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ffffff;
+    font-size: 1.1em;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.accordion::before {
+    content: "\f0c9";
+    position: absolute;
+    left: 95%;
+    font-family: FontAwesome;
+    font-size: 1em;
+}
+
+.panel ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.panel li {
+    width: 50%;
+    font-weight: 300;
+}
+
+.panel li a {
+    padding: 15px;
+}
+
+
+/* Drop Down in Docs */
+
+.accordion-docs {
+    width: 100%;
+    text-align: left;
+}
+
+
+/* Modular Footer */
+
+.modular-footer,
+.modular-footer-small {
+    text-align: right;
+    padding: 15px;
+}
+
+
+/* Headings incl Module Headings */
+
+.heading-1,
+.heading-2,
+.heading-3 {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.heading-1 h1,
+.heading-2 h2,
+.heading-3 h3 {
+    padding: 10px;
+    letter-spacing: .02em;
+}
+
+
+/* Modular Box Text & Paragraphs */
+
+.modular-box-text p {
+    padding: 10px;
+    /* text-align: justify; */
+    line-height: 1.375em;
+    letter-spacing: .01em;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.justify {
+    text-align: justify;
+}
+
+
+.inset {
+    font-size: 1.05em;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.do-this {
+    font-size: 24px;
+    background: #006600;
+    color: #FFFFFF;
+    margin: 0 8px 0 0;
+    padding: 4px 6px;
+    border-radius: 3px;
+}
+
+.donot-this {
+    font-size: 24px;
+    background: #c21a1a;
+    color: #FFFFFF;
+    margin: 0 8px 0 0;
+    padding: 4px 6px;
+    border-radius: 3px;
+}
+
+.consider-this {
+    font-size: 24px;
+    background: #0a3d4f;
+    color: #FFFFFF;
+    margin: 0 8px 0 0;
+    padding: 4px 6px;
+    border-radius: 3px;
+}
+
+.avoid-this {
+    font-size: 24px;
+    background: #dda11c;
+    color: #FFFFFF;
+    margin: 0 8px 0 0;
+    padding: 4px 6px;
+    border-radius: 3px;
+}
+
+
+/* Buttons */
+
+.button-rounded {
+    border-radius: 25px;
+}
+
+.button i,
+.button-rounded i {
+    font-size: .8em;
+}
+
+.button-toggle:focus,
+.button-toggle-d:focus,
+.button-toggle-h:focus,
+.button-toggle-f:focus {
+    /* button click effect in doc's delete in full*/
+    border: 1px solid #006bb6;
+    box-shadow: 0 0 15px 0 #3498db;
+}
+
+/*******************************************************************************
+Footer
+*******************************************************************************/
+
+/* Footer Styles */
+
+
+.footer a {
+	color: #ffffff;
+}
+.footer {
+    margin-top: 40px;
+    background: #006168;
+    position: relative;
+    bottom: 0;
+}
+
+    .footer p {
+        padding: 5px 0;
+    }
+
+    .footer li:hover {
+        text-decoration: underline;
+    }
+
+    .footer > .row {
+        display: flex;
+        width: 95%;
+        margin: 5px auto;
+        color: #fff;
+    }
+
+.contact, .links, .follow {
+    margin: 20px;
+    width: 33%;
+}
+
+.footer h2 {
+    margin: 20px 0;
+    color: #45C1C0;
+}
+
+.footer .contact > ul > li {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .footer-nav-list {
+    line-height: 25px;
+}
+
+.footer .social-nav-list li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+    .footer .social-nav-list li a {
+        display: block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 1.375em;
+        text-decoration: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-top: 8px;
+        text-align: center;
+    }

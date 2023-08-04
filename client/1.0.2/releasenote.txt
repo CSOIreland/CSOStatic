@@ -1,0 +1,12 @@
+********************************************************************************
+Version 1.0.0
+This is the first initial release. There is no previous release to upgrade from.
+********************************************************************************
+Version 1.0.2
+Map GeoJSON files added. No upgrade required.
+JSON_Stat JS library Version 0.13.3 added. 
+If you are already using the JSON-Stat library then please update your code in order to load the library from the CSO Live CDN rather than locally.
+All CDN references have been updated to point to the CSO Live CDN available at https://cdn.cso.ie. 
+Please update your code by replacing https://cdn-incubator.cso.ie/ with https://cdn.cso.ie/
+********************************************************************************
+

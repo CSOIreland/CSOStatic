@@ -1,0 +1,97 @@
+/*******************************************************************************
+jQuery UI
+*******************************************************************************/
+
+.checkradio fieldset {
+    border: none;
+    text-align: right;
+    margin: 10px auto;
+}
+
+.checkradio legend {
+    font-size: 1.1em;
+    padding: 5px;
+}
+
+.checkradio label {
+    margin: 5px;
+    padding: 10px;
+}
+
+/*******************************************************************************
+Scroll to Top
+*******************************************************************************/
+
+#return-to-top {
+    z-index: 10;
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: none;
+    background-color: #00ada8;
+    opacity: .5;
+    transition: all .3s ease-in-out;
+}
+
+#return-to-top:hover {
+    opacity: 1;
+    bottom: 30px;
+    color: #ffffff;
+    box-shadow: 0 2px 10px 0 #666666;
+}
+
+#return-to-top i {
+    position: relative;
+    left: 9px;
+    top: 7px;
+    font-size: 2em;
+    color: #e6e6e6;
+}
+
+/*******************************************************************************
+Sticky Side Menu
+*******************************************************************************/
+
+.sticky-box {
+    background-color: #00ada8;
+    box-shadow: 0 2px 10px 0 #666666;
+}
+
+.sticky {
+    opacity: .6;
+    position: sticky;
+    top: .5em;
+    overflow-y: auto;
+    z-index: 999;
+    transition: all .5s;
+}
+
+.sticky ul {
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sticky a {
+    color: #FFFFFF;
+}
+
+.sticky li a {
+    text-decoration: none;
+}
+
+.sticky li a:hover {
+    text-decoration: underline;
+}
+
+.sticky-box {
+    border-right: 1px solid #eee;
+    font-size: .9em;
+}
+
+.sticky:hover {
+    opacity: 1;
+}
